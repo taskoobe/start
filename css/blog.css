@@ -1,0 +1,51 @@
+
+.articlebox1{
+    border-radius: 16px;
+    background-color: #00283a;
+    padding: 25px;
+    display: block;
+    margin-top: 20px;
+}
+
+.title{
+    display: flex;
+    justify-content: space-between;
+
+}
+.left-time{
+    display: flex;
+    align-items: center;
+    
+}
+.smallicon{
+    margin-right: 5px;
+    padding: 0%;
+    width: 17px;
+    height: 17px;
+    fill:#808080;
+}
+
+.mainbody{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    margin: 0px 10px;
+}
+.imagec{
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.front ul li{
+    margin: 10px 0px;
+}
+.code{
+    background-color: #E0E0E0;
+    border-radius: 16px;
+    
+}
+
+:target {
+    scroll-margin-top: 100px; /* 调整为你的导航高度 */
+}
+
+

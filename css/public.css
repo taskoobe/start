@@ -1,0 +1,529 @@
+/* 全局设置 */
+* {
+    box-sizing: border-box;
+    /* 确保所有元素在计算宽高时包含 padding 和 border */
+}
+
+html, body {
+    margin: 0; /* 去掉默认外边距 */
+    padding: 0; /* 去掉默认内边距 */
+    height: 100%; /* 高度设为 100% */
+    width: 100%; /* 宽度设为 100% */
+    background-color: #02162b; /* 设置背景颜色 */
+   
+}
+
+/* 字体样式 */
+.font {
+    margin: 10px;
+    font-size: 50px;
+}
+
+/* 分割线样式 */
+.divider {
+    border-top: 1px dashed #ccc;
+    /* 虚线边框 */
+    margin: 30px 0px;
+}
+/* 通用文本样式 */
+.text {
+    flex: 1;
+    color: white;
+    flex-direction: column;
+    display: flex;
+}
+
+
+/* 顶部导航栏样式 */
+.header-box {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0px;
+    border-radius: 15px;
+    background-color: #00283a;
+    line-height: 70px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.header {
+    height: 100%;
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 导航栏链接样式 */
+.header-nav {
+    position: relative;
+    list-style: none;
+    display: flex;
+    padding: 0px 10px;
+    margin: 0px;
+    align-items: center;
+    border: none;
+}
+.slide1,.slide2{
+    position: absolute;
+    display: inline-block;
+    height: 50px;
+    border-radius: 10em;
+    transition: all 0.6s cubic-bezier(0.23,1,0.32,1.05);
+}
+.slide1{
+    background-color: palevioletred;
+    z-index: 2;
+}
+.slide2{
+    opacity: 0;
+    background-color: rgba(219, 112, 147, 1);
+    z-index: 1;
+    box-shadow: 0 0 20px #fff inset;
+}
+.squeeze{
+    transform: scale(0.9);
+}
+
+.header-nav li a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    padding: 0px 70px;
+    display: inline-block;
+    border: none;
+    z-index: 3;
+}
+
+/* 导航背景图片样式 */
+.navigation {
+    height: 600px;
+    background-size: 100%;
+    background-image: url(../image/background.jpg) !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: transparent;
+    border-radius: 15px;
+    margin: 0px auto;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.hello {
+   
+    background-color: transparent;
+}
+
+/* 个人信息卡片样式 */
+#mycard {
+    position: fixed;
+    top: 20%;
+    left: 200px;
+    width: 300px;
+    background-color: #00283a;
+    height: 100%;
+    padding: 0px 30px;
+    border-radius: 15px;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    
+}
+
+/* 个人信息头像及布局 */
+.person {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.person img {
+    height: 100px;
+    border-radius: 50%;
+    /* 圆形头像 */
+}
+
+/* 鼠标悬停样式 */
+.me-hover {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    margin: 0;
+}
+.unvisible {
+    opacity: 0;
+    display: inline;
+}
+
+.visible {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+/* 联系方式列表 */
+.lianxi-list {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.lianxi-list a:hover .icon{
+    fill: pink;
+}
+/* 图标样式 */
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: white;
+    margin: 10px;
+}
+
+/* 信息容器样式 */
+.pim {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.pim div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 5px 0px;
+}
+
+/* 文字灰色样式 */
+.xinxi {
+    color: #808080;
+}
+
+.content {
+    background-color: transparent;
+    min-height: 100vh;
+    display: flex;
+    margin: 0px 200px;
+    flex: 1;
+}
+
+.kong {
+    width: 300px;
+    height: 50px;
+}
+
+.about {
+    width: calc(100% - 300px);
+}
+.content-li>h3 {
+    display: flex;
+    align-items: center;
+    margin: 40px 0px;
+
+}
+
+.content-li{
+    display: block ;
+}
+
+.borderbotm {
+    flex: 1;
+    margin: 20px;
+    border-top: 1px dashed #ccc;
+}
+footer {
+    background-color: #00283a; /* 页脚背景颜色 */
+    color: white; /* 文本颜色 */
+    text-align: center; /* 文本居中 */
+    padding: 20px; /* 内边距 */
+    position: relative; /* 相对定位 */
+    bottom: 0; /* 让页脚在底部 */
+    margin: 5px;
+    border-radius: 16px;
+    width: 100%; /* 占满页面宽度 */
+    margin-top: auto;
+}
+
+
+.sentence{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.sentence div{
+    position: absolute; 
+    bottom: 0px;
+    right: 0; 
+    width: 90%; /* 改为百分比以适应屏幕 */
+    max-width: 835px; 
+    margin: 0px 20px;
+    border-radius: 50px;
+
+}
+.sentence div p {
+    position: relative;
+    margin: auto;
+    padding-bottom: 10px;
+    font-size: 4rem;
+    word-spacing: 0.2em;
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    color: transparent;
+    background-color:#D8BFD8;
+    background-clip: text;
+    
+}
+
+p::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 6rem, white 11rem, transparent 11.15rem, transparent 15rem, rgba(255, 255, 255, 0.3) 20rem, transparent 25rem, transparent 27rem, rgba(255, 255, 255, 0.6) 32rem, white 33rem, rgba(255, 255, 255, 0.3) 33.15rem, transparent 38rem, transparent 40rem, rgba(255, 255, 255, 0.3) 45rem, transparent 50rem, transparent 100%);
+    background-clip: text;
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+    animation: shine 5s infinite linear;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 200% 0; /* 从右侧开始 */
+    }
+    100% {
+        background-position: -100% 0; /* 向左滑动，覆盖整个文本 */
+    }
+}
+
+.header input {
+	/* 隐藏复选框 */
+	display: none;
+}
+
+.header input:checked + label::before {
+	top: calc(50% - 2px);
+	/* 逆时针旋转45度 */
+	transform: rotate(-45deg);
+	transition: top 0.3s ease-out, transform 0.3s ease-out 0.3s;
+}
+.header input:checked + label::after {
+	top: calc(50% - 2px);
+	/* 顺时针旋转45度 */
+	transform: rotate(45deg);
+	/* 定义过渡效果 */
+	/* 先执行top的变化 然后在.3s后执行transform转换 ease-out是从快速到慢速的过程 */
+	transition: top 0.3s ease-out, transform 0.3s ease-out 0.3s;
+}
+/* 媒体查询 如果页面的宽度到了992px之后就执行里面的代码 */
+@media (max-width: 600px) {
+    
+    .header ul {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 0;
+        width: 100%;
+        opacity: 1;
+        transform: none;
+    }
+
+    .header ul li {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        background-color: #00283a;
+    }
+
+    .header ul li a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .header label {
+        right: 10px;
+    }
+	/* 我们先写移动端的导航栏样式 start */
+    .header span{
+        display: none;
+    }
+    .slide1,.slide2{
+        all: unset;
+    }
+    .header label {
+        /* 绝对定位 */
+        position: absolute;
+        /* clac方法自动计算 让元素垂直居中 */
+        top: calc(50% - 25px);
+        right: 50px;
+        width: 50px;
+        height: 50px;
+        /* 圆角属性 */
+        border-radius: 6px;
+        /* 元素边框 */
+        border: 1px solid rgba(198, 217, 237, 0.3);
+        background-color: #c6d9ed;
+        /* 盒子阴影 多组值用逗号隔开 */
+        box-shadow: 5px 3px 6px 1px #c6d9ed, -5px -3px 6px 1px white;
+        /* 鼠标移入变小手 */
+        cursor: pointer;
+        transition: all 0.5s ease-out;
+        display: block;
+    }
+    /* 先把label元素内的两条线定义一下 */
+.header label::before,
+.header label::after {
+	content: "";
+	/* 利用两个伪元素来定义 */
+	position: absolute;
+	left: 5px;
+	width: 40px;
+	height: 4px;
+	/* 让两条更佳圆滑 */
+	border-radius: 4px;
+	background-color: black;
+	/* 收回来的动画刚好相反 */
+	transition: transform 0.3s ease-out, top 0.3s ease-out 0.3s;
+}
+    /* 分别定义两条线的位置 */
+.header label::before {
+	top: calc(50% - 10px);
+}
+.header label::after {
+	top: calc(50% + 6px);
+}
+/* 然后定义label元素的动画效果 */
+/* 对了:checked是判断复选框是否被选中 + 是相邻兄弟选择器 找最近的下一次label元素 */
+.header input:checked + label {
+	/* 加了inset就是内部阴影 啥都不写就是默认的外部阴影(outset) */
+	box-shadow: 0 0 0 #fff, 0 0 0 #fff, 5px 3px 6px 1px #c6d9ed inset,
+		-5px -3px 6px 1px #fff inset;
+}
+.header ul {
+	position: relative;
+	top: 70px;
+	width: 100%;
+	/* 元素的不透明度 为0 就是完全透明 */
+	opacity: 0;
+	/* 让元素缩放到0 就是直接隐藏 */
+	transform: scaleY(0);
+	/* 这个属性设置元素缩放的中心点 设置到了最上面的中间位置 */
+	transform-origin: 50% 0;
+	transition: all 0.5s ease-out;
+}
+
+.header ul li {
+	list-style: none;
+	width: 100vb;
+    margin: 0px;
+	height: 66px;
+    background-color:  #00283a;
+}
+.header ul li a {
+	/* a标签是行内元素 不设置为块级或者行内块就没法设置宽高 */
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 66px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 700;
+	/* 取消文字下划线 */
+	text-decoration: none;
+	color: white;
+	border: 1px solid rgba(198, 217, 237, 0.3);
+	
+	transition: all 0.3s ease-out;
+}
+.header ul li a:hover {
+	box-shadow: 0 0 0 #fff, 0 15px 20px #c6d9ed inset;
+}
+.header input:checked ~ ul {
+	opacity: 1;
+	transform: scaleY(1);
+}
+.navigation{
+    height: 300px;
+    background-size: contain;
+    background-position: top;
+}
+
+ /* 个人信息卡片样式调整 */
+ #mycard {
+        position: static; /* 取消固定定位 */
+        top: auto; /* 取消 top 属性 */
+        left: auto; /* 取消 left 属性 */
+        width: 90%; 
+        height: auto; /* 根据内容自适应高度 */
+        padding: 10px; /* 取消内边距 */
+        display: flex;
+        flex-direction: column;
+        box-shadow: none; /* 取消阴影 */
+        z-index: 0; /* 可根据需要调整 */
+        margin: 0 auto; 
+        box-sizing: border-box;
+        
+}
+
+.person img {
+    height: 80px; /* 缩小头像大小 */
+}
+
+.pim {
+    font-size: 12px; /* 缩小字体大小 */
+}
+
+/* 内容区域样式调整 */
+.content {
+    flex-direction: column; 
+    margin:  0px 20px; 
+}
+
+.about {
+    width: 100%; /* 内容区域占满宽度 */
+}
+
+.kong {
+    display: none; /* 隐藏占位符 */
+}
+
+.icon {
+    width: 20px; /* 缩小图标大小 */
+    height: 20px;
+}
+
+/* 调整文本内容及分割线样式 */
+.font {
+    font-size: 30px; /* 缩小字体大小 */
+}
+
+.divider {
+    margin: 20px 0px; /* 缩小分割线的上下间距 */
+}
+
+/* 修改内容标题的间距 */
+.content-li>h3 {
+    margin: 20px 0px; /* 缩小标题的上下间距 */
+}
+
+.borderbotm {
+    margin-left: 10px;
+    margin-right: 10px; /* 缩小左右间距 */
+}
+.sentence div {
+    height: 80px; /* 可调整 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sentence div p {
+    font-size: 2rem; /* 减小字体大小 */
+}
+}

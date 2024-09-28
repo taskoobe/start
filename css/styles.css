@@ -1,0 +1,189 @@
+
+.cardbox1 {
+    border-radius: 16px;
+    background-color: #00283a;
+    padding: 40px;
+    display: block;
+
+}
+
+.cardbox1 blockquote {
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardbox1 blockquote::before {
+    content: '"';
+    position: relative;
+    top: -20px;
+    font-size: 54px;
+    color: pink;
+}
+
+.cardbox1 blockquote::after {
+    content: '"';
+    position: relative;
+    bottom: -40px;
+    font-size: 54px;
+    color: pink;
+}
+
+.cardbox2 {
+
+    height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.cardbox2-1 {
+    background-color: #00283a;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.cardbox2-2 {
+    background-color: #00283a;
+    border-radius: 16px;
+    padding: 20px;
+
+}
+
+.skillbox {
+    width: 100%;
+    height: 75%;
+    display: flex;
+}
+
+.skillbox-img {
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+}
+
+.skillbox-text {
+    width: 50%;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+  
+}
+
+.knowbox {
+    height: 25%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button{
+    border: 2px solid white;
+    padding: 10px 40px;
+    border-radius:50px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.button:hover{
+    transform: scale(1.1);
+}
+.wrap{
+    width: 100%;
+    position: relative;
+    top: 100px;
+    min-height: 100vh;
+    height: 900px;
+}
+.wrap::after{
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    width: 5px;
+    z-index: -999;
+    height: 100%;
+    background-color: rgba(255,255,255,0.5);
+    
+}
+.exbox{
+    position: relative;
+    width: 100%;
+    height: 120px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.left,.right{
+    position: relative;
+    width: 40%;
+    height: auto;
+    border-radius: 15px;
+    text-align: center;
+    color: rgb(90,90,90);
+    background-color: rgba(2, 22, 43, 0.5);
+    
+
+}
+
+.right p,.left p{
+    margin: 5px;
+}
+.exbox:nth-child(even) .left{
+    background-color: #00283a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.exbox:nth-child(odd) .right{
+    background-color: #00283a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.center{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.center>span{
+    width: 120px;
+    border-radius: 10px;
+    text-align: center;
+    font: 900 24px '';
+    line-height: 50px;
+    background-color:palevioletred;
+}
+
+
+@media (max-width: 600px) {
+   
+    .hello h1 {
+        font-size: 2rem; /* 更灵活的字体大小 */
+        margin: 20px 0;
+    }
+    .cardbox2{
+        width: auto;
+        height: auto;
+        grid-template-columns: 1fr;
+    }
+    .wrap{
+        height: 1000px;
+    }
+    .wrap::after {
+        width: 3px; /* 缩小宽度，更适合小屏幕 */
+        height: 100%; /* 保持高度自适应 */
+    }
+    .exbox{
+        height: auto;
+    }
+
+    .left,.right{
+        height: auto;
+    }
+    
+   
+}

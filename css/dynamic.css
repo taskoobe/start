@@ -1,0 +1,335 @@
+.photo {
+    height: 400px;
+    background: linear-gradient(135deg, #9F7AEA 0%, #4FD1C5 100%);
+    display: flex;
+    border-radius: 15px;
+    position: relative;
+    /* 确保 .carousel 以 .photo 为参考 */
+    justify-content: center;
+    align-items: center;
+}
+
+.shell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 调整为居中对齐 */
+    position: relative;
+    height: 90%;
+    width: 100%;
+    margin: auto;
+}
+
+.carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 75px 0;
+    perspective: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 水平和垂直居中 */
+}
+
+.arrows {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: absolute;
+    right: 15px;
+}
+
+.up,
+.next {
+    margin: 5px 0;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: #ffffff61;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.up:hover,
+.next:hover {
+    background-color: #fff;
+    color: #9795f8;
+}
+
+.boxs {
+    width: 100%;
+    height: 210px;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+
+.box {
+    position: absolute;
+    width: 520px;
+    height: 200px;
+    border: 2px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0.7;
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: none;
+
+}
+
+.box.selected {
+    border-color: goldenrod;
+    border-width: 5px;
+    opacity: 1;
+}
+
+/* 响应式调整 */
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .carousel {
+        transform: translate(-50%, -50%) scale(0.8);
+        /* 缩小到 80% */
+    }
+
+    .box {
+        width: 400px;
+        /* 调整 box 宽度 */
+        height: 150px;
+        /* 调整 box 高度 */
+    }
+
+
+
+    .up,
+    .next {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        transform: translate(-50%, -50%) scale(0.6);
+        /* 缩小到 60% */
+    }
+
+    .box {
+        width: 300px;
+        /* 调整 box 宽度 */
+        height: 120px;
+        /* 调整 box 高度 */
+    }
+
+    .shell {
+        padding-top: 30px;
+    }
+
+    .up,
+    .next {
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
+    }
+
+    .arrows {
+        right: 10px;
+    }
+}
+
+
+.leave-messages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(90deg, #e0c3fc, #8ec5fc 100%);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px #00000020;
+}
+
+.messages {
+    margin: 60px;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.43);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px #00000020;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    padding: 0px 40px 30px 40px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+input,
+textarea {
+    border: none;
+    color: #000;
+    margin-bottom: 20px;
+    font: 900 10px '';
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#username {
+    height: 60px;
+}
+
+#message {
+    height: 120px;
+}
+
+.messages h1 {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 15px;
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 10px;
+}
+
+#submitBtn {
+    position: absolute;
+    right: 40px;
+    bottom: 0px;
+    background-image: linear-gradient(90deg, #e0c3fc 0%, #8ec5fc 100%);
+    border: none;
+    font-size: 15px;
+    width: 80px;
+    height: 35px;
+    border-radius: 50px;
+}
+
+#messageBoard {
+    width: 100%;
+    text-align: left;
+    padding: 0px 50px;
+}
+
+@keyframes messageFadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.message {
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    opacity: 0;
+    animation: messageFadeIn 0.5s ease forwards;
+    background-image: linear-gradient(90deg, #8ec5fc 0%, #e0c3fc 100%);
+    background-color: #fff;
+    margin: 35px 0px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px #00000026;
+    text-shadow: 0px 0px 20px #ffffff;
+}
+
+.message-info {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    position: relative;
+}
+.info {
+    transform: translateY(-15px);
+}
+
+
+.info img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 10px #fff solid;
+}
+
+strong {
+    position: absolute;
+    width: auto;
+    letter-spacing: 3px;
+    top: 40px;
+    left: 75px;
+    white-space: nowrap; /* 禁止空格处换行 */
+    display: inline-block; /* 保证元素为行内块，防止宽度收缩 */
+}
+
+.message-info span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.language {
+    font-size: 15px;
+    margin: 10px 30px;
+    width: auto;
+}
+@media (max-width: 600px) {
+    
+
+    .message-info {
+        height: auto;
+        flex-direction: column; /* 改为纵向布局 */
+        align-items: flex-start; /* 左对齐 */
+        font-size: 12px; /* 调整文字大小 */
+    }
+
+    .info {
+        transform: translateY(0); /* 去掉上移效果 */
+        margin-bottom: 10px;
+    }
+
+    .info img {
+        width: 50px;
+        height: 50px;
+        border: 5px #fff solid;
+    }
+
+    strong {
+        position: relative;
+        top: 5px;
+        left: 0;
+        font-size: 14px; /* 缩小字体 */
+        letter-spacing: 2px; /* 调整字间距 */
+    }
+
+    .message-info span {
+        position: relative;
+        top: 0;
+        right: 0;
+        padding-left: 4px;
+        font-size: 12px; /* 缩小时间文字大小 */
+    }
+
+    .language {
+        font-size: 14px;
+        margin: 10px 15px; /* 减少外边距 */
+    }
+}
